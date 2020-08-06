@@ -1,0 +1,36 @@
+Untuk Controller=====================================================================
+
+// Menampilkan data menggunakan Where
+
+// Untuk memanggil fungsi2 untuk berinteraksi kedalam database (CRUD)
+$this->load->model('MSudi');
+// Untuk memanggil nama table dan seleksi pada saat pemanggilan data
+$GetMenu = $this->MSudi->GetDataWhere('menu', 'status_menu', 1);
+// Untuk menjalankan fungsi GetMenu dan membuat data array kedalam templates/halaman website
+$data['GetMenu'] = $GetMenu->result();
+// Untuk memanggil atau menjalankan layout/file tampilan dan memasukan data array
+$this->load->view('welcome_message',$data);
+
+
+
+
+
+
+Untuk Memanggil data di dalam templates =============================================================
+
+<?php
+            if(!empty($GetMenu)){
+              $no= 1;
+                foreach($GetMenu as $GetMenu_Go){
+          ?>
+             
+   
+
+
+
+          <?php
+            } } 
+          ?>
+
+
+=====================================================================================
